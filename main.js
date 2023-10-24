@@ -203,23 +203,22 @@ async function main() {
     // WRITE YOUR CODE BELOW THIS LINE//
 
 
-    $('#letterSubmit').click(addLetter);
+
+
+    $('#letterSubmitButton').click(addLetter);
 
     function addLetter() {
         contractWithSigner.addLetter($('#letterInput').val());
-        getNewLetter();
+        letterSubmit();
     }
 
 
-    async function getNewLetter() {
-        let letter = await contract.getNewLetter();
+    async function letterSubmit() {
+        let NewLetters = await contract.getNewLetter();
     }
 
 
 
-
-
-    
 
     letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 

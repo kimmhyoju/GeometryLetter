@@ -8,15 +8,18 @@ input[type="text"] {
     padding: 10px;
     font-size: 16px;
     margin-right: 10px;
+    width: auto;
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
+    border: transparent;
+    background-color: lightblue;
 }
 
 canvas {
     border: 1px solid black;
     margin-top: 20px;
 }
+

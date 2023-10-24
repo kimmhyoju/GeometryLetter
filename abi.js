@@ -1,75 +1,39 @@
-    let contractAddress = '0x0D7b8c56152d4BCDC336a1Db20e1cd1Ff04dc666';
+    let contractAddress = '0x9C70b57B64a9D1297Ba1F683F66919Fc799D0660';
     let abi = [
-        [
-            {
-                "inputs": [],
-                "stateMutability": "nonpayable",
-                "type": "constructor"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": true,
-                        "internalType": "bytes1",
-                        "name": "letter",
-                        "type": "bytes1"
-                    },
-                    {
-                        "indexed": false,
-                        "internalType": "string",
-                        "name": "pattern",
-                        "type": "string"
-                    }
-                ],
-                "name": "PatternSubmitted",
-                "type": "event"
-            },
             {
                 "inputs": [
                     {
-                        "internalType": "bytes1",
-                        "name": "letter",
-                        "type": "bytes1"
-                    },
-                    {
                         "internalType": "string",
-                        "name": "pattern",
+                        "name": "_letter",
                         "type": "string"
                     }
                 ],
-                "name": "submitPattern",
+                "name": "addLetter",
                 "outputs": [],
                 "stateMutability": "nonpayable",
                 "type": "function"
             },
             {
+                "anonymous": false,
                 "inputs": [
                     {
-                        "internalType": "bytes1",
-                        "name": "letter",
-                        "type": "bytes1"
-                    }
-                ],
-                "name": "getPattern",
-                "outputs": [
-                    {
+                        "indexed": false,
                         "internalType": "string",
-                        "name": "",
+                        "name": "letter",
                         "type": "string"
                     }
                 ],
-                "stateMutability": "view",
-                "type": "function"
+                "name": "LetterAddedEvent",
+                "type": "event"
             },
             {
                 "inputs": [],
-                "name": "owner",
+                "name": "getNewLetter",
                 "outputs": [
                     {
-                        "internalType": "address",
+                        "internalType": "string[]",
                         "name": "",
-                        "type": "address"
+                        "type": "string[]"
                     }
                 ],
                 "stateMutability": "view",
@@ -78,12 +42,12 @@
             {
                 "inputs": [
                     {
-                        "internalType": "bytes1",
+                        "internalType": "uint256",
                         "name": "",
-                        "type": "bytes1"
+                        "type": "uint256"
                     }
                 ],
-                "name": "patterns",
+                "name": "letters",
                 "outputs": [
                     {
                         "internalType": "string",
@@ -94,5 +58,4 @@
                 "stateMutability": "view",
                 "type": "function"
             }
-        ]
     ];

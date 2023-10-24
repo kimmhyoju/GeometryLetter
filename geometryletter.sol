@@ -15,8 +15,8 @@ contract geometryletter {
         emit LetterAddedEvent(_letter);
     }
 
-    function getNewLetter() public view returns (string[] memory) {
+    function getNewLetter() public view returns 
+    (string[] memory) {
         return letters;
     }
-
 }
