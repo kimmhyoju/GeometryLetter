@@ -209,35 +209,56 @@ async function main() {
 
     function addLetter() {
         contractWithSigner.addLetter($('#letterInput').val());
+        // letterSubmit();
+    }
+
+    contract.on("LetterAddedEvent", function(){
+
         letterSubmit();
-    }
-
-
-    async function letterSubmit() {
-        let NewLetters = await contract.getNewLetter();
-    }
-
+    })
 
 
 
     letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
-    function letterSubmit() {
-    const letter = document.getElementById('letterInput').value.toLowerCase(); 
+//     function letterSubmit() {
     
-    const canvas = document.getElementById('shapeCanvas');
-    const context = canvas.getContext('2d');
+//     const letter = document.getElementById('letterInput').value.toLowerCase(); 
     
-    context.clearRect(0, 0, canvas.width, canvas.height);
+//     const canvas = document.getElementById('shapeCanvas');
+//     const context = canvas.getContext('2d');
+    
+//     context.clearRect(0, 0, canvas.width, canvas.height);
+
+//     if (letters.includes(letter)) {
+//         context.fillStyle = getColorForLetter(letter);
+//         context.fillRect(50, 50, 100, 100);
+//     } else {
+//         alert(`Shape for letter '${letter}' is not defined.`);
+//     }
+// }
+
+// adds a div with the background color
+function letterSubmit() {
+    const letter = document.getElementById('letterInput').value.toLowerCase();
+    
+    const shapeContainer = document.getElementById('shapeContainer');
 
     if (letters.includes(letter)) {
-        context.fillStyle = getColorForLetter(letter);
-        context.fillRect(50, 50, 100, 100);
+        const color = getColorForLetter(letter);
+        
+        const divElement = document.createElement('div');
+        divElement.style.backgroundColor = color;
+        divElement.style.width = '50px';
+        divElement.style.height = '50px';
+        
+        shapeContainer.appendChild(divElement);
     } else {
         alert(`Shape for letter '${letter}' is not defined.`);
     }
 }
+
 
 function getColorForLetter(letter) {
     const colors = {
